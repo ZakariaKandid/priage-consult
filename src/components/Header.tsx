@@ -34,7 +34,7 @@ export function Header({ onBookDemo }: HeaderProps) {
           onClick={() => setMobileOpen(false)}
           aria-label="Priage home"
         >
-          <img src="/logo.png" alt="" className="h-9 w-auto sm:h-10" />
+          <img src={`${import.meta.env.BASE_URL}logo.png`} alt="" className="h-9 w-auto sm:h-10" />
         </Link>
 
         <nav className="hidden flex-1 items-center justify-center gap-8 lg:gap-10 md:flex" aria-label="Main">

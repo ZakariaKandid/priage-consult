@@ -20,7 +20,7 @@ export function Footer() {
         <div className="grid gap-10 lg:grid-cols-3 lg:gap-12">
           <div>
             <Link to="/" className="inline-block rounded-lg bg-white px-3 py-2 shadow-sm">
-              <img src="/logo.png" alt="Priage" className="h-8 w-auto" />
+              <img src={`${import.meta.env.BASE_URL}logo.png`} alt="Priage" className="h-8 w-auto" />
             </Link>
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-white/85">
               Emergency department operations — from pre-arrival intake through live waiting-room

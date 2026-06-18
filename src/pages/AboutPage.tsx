@@ -2,29 +2,31 @@ import { CTABanner } from '../components/ui';
 
 type PageProps = { onBookDemo: () => void };
 
+const base = import.meta.env.BASE_URL;
+
 const TEAM = [
   {
     name: 'John Surette',
     role: 'Co-founder & Lead Developer',
-    photo: '/team/john.jpg',
+    photo: `${base}team/john.jpg`,
     initials: 'JS',
   },
   {
     name: 'Aws Falah',
     role: 'Developer',
-    photo: '/team/aws.jpg',
+    photo: `${base}team/aws.jpg`,
     initials: 'AF',
   },
   {
     name: 'Tai Adewoye',
     role: 'Co-founder & Outreach Lead',
-    photo: '/team/tai.jpg',
+    photo: `${base}team/tai.jpg`,
     initials: 'TA',
   },
   {
     name: 'Zakaria Kandid',
     role: 'Developer',
-    photo: '/team/zak.jpg',
+    photo: `${base}team/zak.jpg`,
     initials: 'ZK',
   },
 ];
