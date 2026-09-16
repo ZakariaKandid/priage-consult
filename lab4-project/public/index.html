@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Workshop and Event Registration System</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Workshop and Event Registration System</h1>
+    <p>CSI 3140 - Lab 4 - Client-Server Interaction and Modern Web Services</p>
+  </header>
+
+  <main>
+    <!-- Section 1: data loaded dynamically from the API -->
+    <section id="workshop-section">
+      <h2>Available Workshops</h2>
+      <ul id="workshop-list"></ul>
+    </section>
+
+    <!-- Section 2: form that sends data to the API (POST) -->
+    <section id="create-section">
+      <h2>Add a New Workshop</h2>
+      <form id="create-form">
+        <label>
+          Title
+          <input type="text" id="title" name="title" />
+        </label>
+        <label>
+          Category
+          <input type="text" id="category" name="category" />
+        </label>
+        <label>
+          Date
+          <input type="date" id="date" name="date" />
+        </label>
+        <label>
+          Capacity
+          <input type="number" id="capacity" name="capacity" min="1" />
+        </label>
+        <button type="submit">Create Workshop</button>
+      </form>
+      <p id="form-message"></p>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

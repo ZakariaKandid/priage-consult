@@ -1,0 +1,140 @@
+openapi: 3.0.3
+info:
+  title: Workshop and Event Registration API
+  description: >
+    REST API for the CSI 3140 Lab 4 project. Manages a list of workshops/events
+    that users can view, create, update, and register for.
+  version: 1.0.0
+
+servers:
+  - url: http://localhost:3000
+
+paths:
+  /api/status:
+    get:
+      summary: Health check
+      responses:
+        "200":
+          description: API is running
+          content:
+            application/json:
+              example:
+                message: "Lab 4 API is running"
+
+  /api/workshops:
+    get:
+      summary: Return all workshops
+      responses:
+        "200":
+          description: A list of workshops
+          content:
+            application/json:
+              example:
+                - id: 1
+                  title: "REST API Fundamentals"
+                  category: "Workshop"
+                  date: "2026-07-15"
+                  capacity: 30
+                  seatsRemaining: 12
+    post:
+      summary: Create a new workshop
+      requestBody:
+        required: true
+        content:
+          application/json:
+            example:
+              title: "Intro to Docker"
+              category: "Workshop"
+              date: "2026-08-01"
+              capacity: 20
+      responses:
+        "201":
+          description: Workshop created
+          content:
+            application/json:
+              example:
+                id: 6
+                title: "Intro to Docker"
+                category: "Workshop"
+                date: "2026-08-01"
+                capacity: 20
+                seatsRemaining: 20
+        "400":
+          description: Missing or invalid fields
+          content:
+            application/json:
+              example:
+                error: "Title, category, date, and capacity are required."
+
+  /api/workshops/{id}:
+    get:
+      summary: Return a single workshop by id
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: The requested workshop
+        "404":
+          description: Workshop not found
+          content:
+            application/json:
+              example:
+                error: "Workshop not found."
+    put:
+      summary: Update an existing workshop
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            example:
+              title: "REST API Fundamentals (Updated)"
+              category: "Workshop"
+              date: "2026-07-16"
+              capacity: 35
+      responses:
+        "200":
+          description: Workshop updated
+        "400":
+          description: Missing or invalid fields
+        "404":
+          description: Workshop not found
+    delete:
+      summary: Delete a workshop
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: Workshop deleted
+        "404":
+          description: Workshop not found
+
+  /api/workshops/{id}/register:
+    patch:
+      summary: Register one seat for a workshop
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: Registration successful, updated workshop returned
+        "400":
+          description: Workshop is full
+        "404":
+          description: Workshop not found
