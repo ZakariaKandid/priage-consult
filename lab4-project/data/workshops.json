@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "title": "REST API Fundamentals",
+    "category": "Workshop",
+    "date": "2026-07-15",
+    "capacity": 30,
+    "seatsRemaining": 12
+  },
+  {
+    "id": 2,
+    "title": "SOAP and WSDL Legacy Systems",
+    "category": "Lecture",
+    "date": "2026-07-17",
+    "capacity": 40,
+    "seatsRemaining": 40
+  },
+  {
+    "id": 3,
+    "title": "GraphQL Introduction",
+    "category": "Seminar",
+    "date": "2026-07-20",
+    "capacity": 25,
+    "seatsRemaining": 5
+  },
+  {
+    "id": 4,
+    "title": "Intro to gRPC and Protocol Buffers",
+    "category": "Seminar",
+    "date": "2026-07-22",
+    "capacity": 20,
+    "seatsRemaining": 20
+  },
+  {
+    "id": 5,
+    "title": "Building Client-Server Apps with Node.js",
+    "category": "Workshop",
+    "date": "2026-07-25",
+    "capacity": 35,
+    "seatsRemaining": 18
+  }
+]

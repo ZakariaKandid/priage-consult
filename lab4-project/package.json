@@ -1,0 +1,12 @@
+{
+  "name": "lab4-workshop-manager",
+  "version": "1.0.0",
+  "description": "CSI 3140 Lab 4 - Workshop and Event Registration System (REST API with Express)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
